@@ -1,19 +1,13 @@
 import requests
-
-
-def read_token():
-    with open('token.txt', 'r') as f:
-        return f.read()
-
+import read_jwt_token
 
 if __name__ == '__main__':
     url = f"https://morpromt2c.moph.go.th/api/v2/send-message/send-now"  # line
-    token = read_token()
+    token = read_jwt_token.read()
     headers = {"Authorization": f"Bearer {token}"}
     params = {  # line
         "datas": [
             "3650100810887",
-            "3501000302113"
         ],
         "messages": [
             {

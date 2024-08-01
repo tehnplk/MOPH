@@ -1,20 +1,15 @@
 import requests
-
-
-def read_token():
-    with open('token.txt', 'r') as f:
-        return f.read()
-
+import read_jwt_token
 
 if __name__ == '__main__':
     url = "https://cvp1.moph.go.th/api/SendMessageTarget"  # app and line
-    token = read_token()
+    token = read_jwt_token.read()
 
     headers = {"Authorization": f"Bearer {token}"}
 
-    html1 = """<h2>คิวหมายเลข A079</h2>
+    html1 = """<h2>คิวหมายเลข A089</h2>
     อีก10คิวจะถึงคิวของท่าน   
-    กรุณาไปรอที่จุดซักประวัติช่องหมายเลข 5
+    กรุณาไปรอที่จุดซักประวัติช่องหมายเลข 7
     """
     params1 = {  # app and line
         "hospital": {
